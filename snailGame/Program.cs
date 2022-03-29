@@ -1,13 +1,17 @@
 ﻿using System;
 
 string place = "start";
+string [] Passwords = {"Sesameseed","Cornflower","Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua Ut enim ad minim veniam quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur Excepteur sint occaecat cupidatat non proident sunt in culpa qui officia deserunt mollit anim id est laborum."};
+
+
+
 
 while (place != "exit")
 {
     if (place == "start")
     {
-        Console.WriteLine("You are currently in the docking station, there is a door ahead of you leading to the wheelhouse");
-        Console.WriteLine("If you want to enter say the password, Sesameseed, and if you do not want to enter be quiet.(sesameseed or you stay.)");
+        Console.WriteLine("Your name is Sesameseed and you are currently in the docking station of the allied forces ship, there is a door ahead of you leading to the wheelhouse.");
+        Console.WriteLine("You hear a robotic voice say: If you want to enter state your Name out loud soldier.");
         string go = Console.ReadLine();
         go = go.ToLower();
 
@@ -24,7 +28,7 @@ while (place != "exit")
 
     if (place == "wheelhouse")
     {
-        Console.WriteLine("You are in the Wheelhouse.");
+        Console.WriteLine("You enter the Wheelhouse.");
         Console.WriteLine("This is the where they control the ship from, there is another door, and of course the door you just entered through. Where do you go?(door or back)");
         string choice = Console.ReadLine();
         choice = choice.ToLower();
@@ -82,7 +86,7 @@ while (place != "exit")
 
 
 
-
+// använd kanske en affär för att få in en algoritm/array och för att få med typkonvertering.
 
 
 
