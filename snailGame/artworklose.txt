@@ -1,0 +1,37 @@
+▓██   ██▓ ▒█████   █    ██     ██▓     ▒█████    ██████ ▓█████  ▐██▌    
+ ▒██  ██▒▒██▒  ██▒ ██  ▓██▒   ▓██▒    ▒██▒  ██▒▒██    ▒ ▓█   ▀  ▐██▌    
+  ▒██ ██░▒██░  ██▒▓██  ▒██░   ▒██░    ▒██░  ██▒░ ▓██▄   ▒███    ▐██▌    
+  ░ ▐██▓░▒██   ██░▓▓█  ░██░   ▒██░    ▒██   ██░  ▒   ██▒▒▓█  ▄  ▓██▒    
+  ░ ██▒▓░░ ████▓▒░▒▒█████▓    ░██████▒░ ████▓▒░▒██████▒▒░▒████▒ ▒▄▄     
+   ██▒▒▒ ░ ▒░▒░▒░ ░▒▓▒ ▒ ▒    ░ ▒░▓  ░░ ▒░▒░▒░ ▒ ▒▓▒ ▒ ░░░ ▒░ ░ ░▀▀▒    
+ ▓██ ░▒░   ░ ▒ ▒░ ░░▒░ ░ ░    ░ ░ ▒  ░  ░ ▒ ▒░ ░ ░▒  ░ ░ ░ ░  ░ ░  ░    
+ ▒ ▒ ░░  ░ ░ ░ ▒   ░░░ ░ ░      ░ ░   ░ ░ ░ ▒  ░  ░  ░     ░       ░    
+ ░ ░         ░ ░     ░            ░  ░    ░ ░        ░     ░  ░ ░       
+ ░ ░                                                                        
+MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMWKkk
+MMMMMMMMMMMMMMMMMMMMMMMMMMMMWXKXNWMMMMMMMMMMMMMMMMMMMMMXx:;;
+MMMMMMMMMMMMMMMMMMMMMMMMMMKo:;;;;ckWMMMMMMM<ENEMY!>MMWKl,;;;
+MMMMMMMMMMMMMMMMMMMMMMMMMX:.,;;;;''xMMMMMMMW0l;,;l0WMMMNo,;,
+MMMMMMMMMMMMMMMMMMMMMMMMMx......'..cNMMMMMNo.     .dNMWk,.''
+MMMMMMMMMMMMMMMMMMMMMMMMMx'',,,,,,':OWMMMNo        .dW0c,;;;
+MMMMMMMMMMMMMMMMMMMMMMMMMKc,;;;;;;,;xNMMM0'         '0O;,;;;
+MMMMMMMMMMMMMMMMMMMMMMMMMWx;;;;;;;;,:dKWMx.         .od;,;;;
+MMMMMMMMMMMMMMMMMMMMMMMMMMXl,;;;;;;;;;:dkc           ';,;;;;
+MMMMMMMMMMMMMMMMMMMMMMMMMMMKl,,;;;;;;;;,,,.         .,;,;;;;
+MMMMMMMMMMMMMMMMMMMMMMMMMMMMXo:;,;;;;;;;;,.         .,;;;;;;
+MMMMMMMMMMMMMMMMMMMMMMMMMMMMMNXOc;;;;;;;;,.         .,;;;;,,
+MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMXkl:,,;;;,.         .;;;;;lk
+MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMWKkdl:;,.         .;;;:dXM
+MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMNXKc          .oKKXWMM
+MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMd          .xMMMMMM
+MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMd          .xMMMMMM
+MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMd          .xMMMMMM
+MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMk.         .kMMMMMM
+MMMMMW<YOU!>XK00KWMMMMMMMMMMMMMMMMMMMMMMK,         ;KMMMMMMM
+MXxl:,'',;cll:;;;;oOKKXNWMMMMMMMMMMMMMMMMWx.       .kMMMMMMM
+O'         .;;;;;;;,...',;cokXWWMMMMMMMMMMWk,     ,kWMMMMMMM
+x.          ',;;;;;;.        .,lKMMMMMMMMMMMNkolokNMMMMMMMMM
+Nk;.         .,;;;;;;.          :XMMMMMMMMMMMMMMMMMMMMMMMMMM
+MMWKxoc;,'....,;;;;;;,.        .dNMMMMMMMMMMMMMMMMMMMMMMMMMM
+MMMMMMMMWWNXK0xc;;;;;;;;,,;:lxkKWMMMMMMMMMMMMMMMMMMMMMMMMMMM
+MMMMMMMMMMMMMMNd;;;;;;;c0WWMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM

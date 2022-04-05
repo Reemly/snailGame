@@ -1,12 +1,13 @@
 ﻿using System;
+using System.IO;
 
 string place = "start";
-string [] Passwords = {"Sesameseed","Cornflower","Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua Ut enim ad minim veniam quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur Excepteur sint occaecat cupidatat non proident sunt in culpa qui officia deserunt mollit anim id est laborum."};
+string[] Passwords = { "Sesameseed", "Cornflower", "Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua Ut enim ad minim veniam quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur Excepteur sint occaecat cupidatat non proident sunt in culpa qui officia deserunt mollit anim id est laborum." };
 
+int Money = 0;
+bool isAlive = true;
 
-
-
-while (place != "exit")
+while (place != "exit" && isAlive)
 {
     if (place == "start")
     {
@@ -29,7 +30,7 @@ while (place != "exit")
     if (place == "wheelhouse")
     {
         Console.WriteLine("You enter the Wheelhouse.");
-        Console.WriteLine("This is the where they control the ship from, there is another door, and of course the door you just entered through. Where do you go?(door or back)");
+        Console.WriteLine("Door, Back, Hallway");
         string choice = Console.ReadLine();
         choice = choice.ToLower();
 
@@ -48,6 +49,38 @@ while (place != "exit")
             place = "wheelhouse";
         }
 
+        if (choice == "hallway")
+        {
+            place = "hallway";
+
+
+
+            Random generator = new Random();
+
+
+            isAlive = Fight();
+
+
+
+
+        }
+
+
+
+    }
+    if (place == "hallway")
+    {
+        string choice2 = Console.ReadLine();
+        choice2 = choice2.ToLower();
+
+    }
+
+
+
+    if (isAlive == true)
+    {
+
+
     }
 
     if (place == "escapepod")
@@ -62,7 +95,7 @@ while (place != "exit")
             place = "exit";
         }
 
-       else if (leave == "back")
+        else if (leave == "back")
         {
             place = "wheelhouse";
         }
@@ -86,7 +119,81 @@ while (place != "exit")
 
 
 
+
+// när man vinner så visas inte loss/win art.
+
 // använd kanske en affär för att få in en algoritm/array och för att få med typkonvertering.
+
+// hallway ska leda till en Merchant eller vending machine, ta användning av den nya Money variabeln som du la till, kolla på dokumentation.
+
+
+ 
+static bool Fight()
+{
+    Random generator = new Random();
+    int health = 100;
+    int fighter1Health = health;
+    int fighter2Health = health;
+    string art0 = File.ReadAllText("artworkenemyenter.txt");
+    string art = File.ReadAllText("artwork.txt");
+    string art1 = File.ReadAllText("artworkwin.txt");
+    string art2 = File.ReadAllText("artworklose.txt");
+
+    while (fighter1Health > 0 && fighter2Health > 0)
+    {
+
+
+
+        System.Console.WriteLine(art);
+
+        Console.ReadLine();
+
+        int damage = generator.Next(1, 20);
+        fighter1Health -= damage;
+
+        damage = generator.Next(1, 20);
+        fighter2Health -= damage;
+
+        System.Console.WriteLine($"Fighter 1 health {fighter1Health}");
+        System.Console.WriteLine($"Fighter 2 health {fighter2Health}");
+        Console.ReadLine();
+
+
+
+
+        if (fighter1Health < 0)
+        {
+            System.Console.WriteLine("Fighter 2 wins");
+            Console.ReadLine();
+            System.Console.WriteLine(art2);
+
+            Console.ReadLine();
+
+
+            return false;
+        }
+
+
+        else if (fighter2Health < 0)
+        {
+            System.Console.WriteLine("fighter 1 wins");
+            Console.ReadLine();
+            System.Console.WriteLine(art1);
+
+            Console.ReadLine();
+            return true;
+
+        }
+
+
+
+ 
+    }
+
+    return true;
+}
+
+
 
 
 
