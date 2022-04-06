@@ -2,13 +2,13 @@
 using System.IO;
 
 string place = "start";
-string[] Passwords = { "Sesameseed", "Cornflower", "Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua Ut enim ad minim veniam quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur Excepteur sint occaecat cupidatat non proident sunt in culpa qui officia deserunt mollit anim id est laborum." };
 
 int Money = 0;
 bool isAlive = true;
-
+bool fightHappened = false;
 while (place != "exit" && isAlive)
 {
+    Console.WriteLine($"Your balance is: {Money} valuables");
     if (place == "start")
     {
         Console.WriteLine("Your name is Sesameseed and you are currently in the docking station of the allied forces ship, there is a door ahead of you leading to the wheelhouse.");
@@ -49,6 +49,7 @@ while (place != "exit" && isAlive)
             place = "wheelhouse";
         }
 
+
         if (choice == "hallway")
         {
             place = "hallway";
@@ -59,6 +60,8 @@ while (place != "exit" && isAlive)
 
 
             isAlive = Fight();
+            fightHappened = true;
+
 
 
 
@@ -68,20 +71,31 @@ while (place != "exit" && isAlive)
 
 
     }
-    if (place == "hallway")
+    if (fightHappened && place == "hallway")
     {
         string choice2 = Console.ReadLine();
         choice2 = choice2.ToLower();
+        Console.WriteLine("You defeated the enemy. Go to the next are? Y/N");
+        Console.ReadLine();
+        if (choice2 == "yes")
+        {
+            place = "vendingRoom";
+        }
+        else if (choice2 == "no")
+        {
+            place = "hallway";
+        }
 
     }
-
-
-
-    if (isAlive == true)
+    if (place == "vendingRoom")
     {
-
-
+        string choice3 = Console.ReadLine();
+        choice3 = choice3.ToLower();
+        Console.WriteLine("You are met with an ominous vending machine,  ");
+        Console.ReadLine();
     }
+
+
 
     if (place == "escapepod")
     {
@@ -120,14 +134,16 @@ while (place != "exit" && isAlive)
 
 
 
-// när man vinner så visas inte loss/win art.
+// när man vinner så visas inte loss/win art. //klarat//
 
-// använd kanske en affär för att få in en algoritm/array och för att få med typkonvertering.
+// använd kanske en affär för att få in en algoritm/array och för att få med typkonvertering. //jobbas på//
 
-// hallway ska leda till en Merchant eller vending machine, ta användning av den nya Money variabeln som du la till, kolla på dokumentation.
+// hallway ska leda till en Merchant eller vending machine, ta användning av den nya Money variabeln som du la till, kolla på dokumentation. //jobbas på//
 
+// om en av fighters kommer till precis 0 health så fastnar spelet
 
- 
+// fixa som sagt en lista av affärs grejor och sälj dem, kanske ge spelaren 100 money efter varje fight?
+
 static bool Fight()
 {
     Random generator = new Random();
@@ -187,7 +203,7 @@ static bool Fight()
 
 
 
- 
+
     }
 
     return true;
