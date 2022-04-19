@@ -3,8 +3,8 @@ using System.IO;
 
 string place = "start";
 
-int Money = 0;
-bool isAlive = true;
+int Money = 0; // Den här kommer ihåg hur mycket pengar som spelaren har samlat på sig det här livet.
+bool isAlive = true; // 
 bool fightHappened = false;
 while (place != "exit" && isAlive)
 {
@@ -12,7 +12,7 @@ while (place != "exit" && isAlive)
     if (place == "start")
     {
         Console.WriteLine("Your name is Sesameseed and you are currently in the docking station of the allied forces ship, there is a door ahead of you leading to the wheelhouse.");
-        Console.WriteLine("You hear a robotic voice say: If you want to enter state your Name out loud soldier.");
+        Console.WriteLine("You hear a robotic voice say: If you want to enter, state your Name out loud, soldier.");
         string go = Console.ReadLine();
         go = go.ToLower();
 
@@ -30,7 +30,7 @@ while (place != "exit" && isAlive)
     if (place == "wheelhouse")
     {
         Console.WriteLine("You enter the Wheelhouse.");
-        Console.WriteLine("Door, Back, Hallway");
+        Console.WriteLine("Your choices are: Door, Hallway, Back");
         string choice = Console.ReadLine();
         choice = choice.ToLower();
 
@@ -44,13 +44,7 @@ while (place != "exit" && isAlive)
             place = "start";
         }
 
-        else
-        {
-            place = "wheelhouse";
-        }
-
-
-        if (choice == "hallway")
+        else if (choice == "hallway")
         {
             place = "hallway";
 
@@ -68,6 +62,13 @@ while (place != "exit" && isAlive)
 
         }
 
+        else
+        {
+            place = "wheelhouse";
+        }
+
+
+
 
 
     }
@@ -75,24 +76,39 @@ while (place != "exit" && isAlive)
     {
         string choice2 = Console.ReadLine();
         choice2 = choice2.ToLower();
-        Console.WriteLine("You defeated the enemy. Go to the next are? Y/N");
+        Console.WriteLine("You defeated the enemy. Go to the next are? Choices: Yes, No, Back");
         Console.ReadLine();
         if (choice2 == "yes")
         {
             place = "vendingRoom";
+            Money += 100; // det här gör så att man får 100 varje gång man går till rummet, vilket kan utnyttjas..
         }
         else if (choice2 == "no")
         {
             place = "hallway";
         }
 
+        else if (choice2 == "back")
+        {
+            place = "wheelhouse";
+        }
+
+
     }
     if (place == "vendingRoom")
     {
         string choice3 = Console.ReadLine();
         choice3 = choice3.ToLower();
-        Console.WriteLine("You are met with an ominous vending machine,  ");
+        Console.WriteLine("You are met with an ominous vending machine, do you want to buy something? ");
         Console.ReadLine();
+
+        if (choice3 == "Yes") {
+
+        }
+        
+        else if (choice3 == "back") {
+            place = "hallway";
+        }
     }
 
 
@@ -133,16 +149,6 @@ while (place != "exit" && isAlive)
 
 
 
-
-// när man vinner så visas inte loss/win art. //klarat//
-
-// använd kanske en affär för att få in en algoritm/array och för att få med typkonvertering. //jobbas på//
-
-// hallway ska leda till en Merchant eller vending machine, ta användning av den nya Money variabeln som du la till, kolla på dokumentation. //jobbas på//
-
-// om en av fighters kommer till precis 0 health så fastnar spelet
-
-// fixa som sagt en lista av affärs grejor och sälj dem, kanske ge spelaren 100 money efter varje fight?
 
 static bool Fight()
 {
@@ -212,4 +218,17 @@ static bool Fight()
 
 
 
+
+// när man vinner så visas inte loss/win art. //klarat//
+
+// använd kanske en affär för att få in en algoritm/array och för att få med typkonvertering. //jobbas på//
+
+// hallway ska leda till en Merchant eller vending machine, ta användning av den nya Money variabeln som du la till, kolla på dokumentation. //jobbas på//
+
+// om en av fighters kommer till precis 0 health så fastnar spelet
+
+// fixa som sagt en lista av affärs grejor och sälj dem, kanske ge spelaren 100 money efter varje fight?
+
+// lägg till ett item i store som kallas filth eller trash, gör så att det sägs varje gång man trycker på enter som med hur mycket perngar du har just nu, och få spelet att säga "you stink of flith/trash". Detta kan leda till ett hemligt ending.
+// Gör så att filth/trash kostar 1000 så att man blir tvungen att utnyttja en funktion för att ha råd.
 
