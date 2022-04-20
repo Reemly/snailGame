@@ -1,30 +1,45 @@
 ﻿using System;
 using System.IO;
+using System.Collections.Generic;
 
 string place = "start";
 
 int Money = 0; // Den här kommer ihåg hur mycket pengar som spelaren har samlat på sig det här livet.
-bool isAlive = true; // 
+bool isAlive = true;
 bool fightHappened = false;
+bool playerPurchased = false;
+
+List<string> inventory = new List<string>();
+
+
 while (place != "exit" && isAlive)
 {
     Console.WriteLine($"Your balance is: {Money} valuables");
+    if (inventory.Contains("trash")) {
+        System.Console.WriteLine("You stink of filth.");
+    }
+
     if (place == "start")
     {
-        Console.WriteLine("Your name is Sesameseed and you are currently in the docking station of the allied forces ship, there is a door ahead of you leading to the wheelhouse.");
-        Console.WriteLine("You hear a robotic voice say: If you want to enter, state your Name out loud, soldier.");
+        Console.WriteLine("Your name is XF344 and you are currently in the docking station of the allied forces ship, there is a door ahead of you leading to the wheelhouse.");
+        Console.WriteLine("You hear a robotic voice say: If you want to enter, state your ID out loud, Droid.");
+        Console.WriteLine("{Btw when you enter prompts later on you will want to enter them when the terminal says your current valuables.}");
         string go = Console.ReadLine();
         go = go.ToLower();
 
-        if (go == "sesameseed")
+        if (go == "xf344")
         {
             place = "wheelhouse";
         }
 
-        else
+        else if (go != "xf344")
         {
             place = "start";
+            Console.WriteLine("That isn't a registered ID, Who are you? The robot voice exclaims.");
+            Console.ReadLine();
+
         }
+
     }
 
     if (place == "wheelhouse")
@@ -81,7 +96,7 @@ while (place != "exit" && isAlive)
         if (choice2 == "yes")
         {
             place = "vendingRoom";
-            Money += 100; // det här gör så att man får 100 varje gång man går till rummet, vilket kan utnyttjas..
+            Money += 100; // det här gör så att man får 100 varje gång man går till vendingRummet, vilket kan utnyttjas..
         }
         else if (choice2 == "no")
         {
@@ -97,16 +112,19 @@ while (place != "exit" && isAlive)
     }
     if (place == "vendingRoom")
     {
+        Console.WriteLine("You are met with an ominous vending machine, do you want to buy something? Choices: Yes, Back, WIP");
         string choice3 = Console.ReadLine();
         choice3 = choice3.ToLower();
-        Console.WriteLine("You are met with an ominous vending machine, do you want to buy something? ");
         Console.ReadLine();
 
-        if (choice3 == "Yes") {
-
+        if (choice3 == "Yes")
+        {
+            (inventory, Money) = Store(inventory, Money);
+            
         }
-        
-        else if (choice3 == "back") {
+
+        else if (choice3 == "back")
+        {
             place = "hallway";
         }
     }
@@ -115,6 +133,8 @@ while (place != "exit" && isAlive)
 
     if (place == "escapepod")
     {
+        // if (inventory.Contains("key"))
+
         Console.WriteLine("You are in the escape room, there is a spare pod left over from the crew leaving.");
         Console.WriteLine("Say 'Exit' to leave.(exit or back)");
         string leave = Console.ReadLine();
@@ -148,7 +168,13 @@ while (place != "exit" && isAlive)
 
 
 
+static (List<string>, int) Store(List<string> inv, int money)
+{
+    inv.Add("trash");
+    money -= 100;
 
+    return (inv, money);
+}
 
 static bool Fight()
 {
