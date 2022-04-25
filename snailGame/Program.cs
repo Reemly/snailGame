@@ -15,14 +15,16 @@ List<string> inventory = new List<string>();
 while (place != "exit" && isAlive)
 {
     Console.WriteLine($"Your balance is: {Money} valuables");
-    if (inventory.Contains("trash")) {
+
+    if (inventory.Contains("trash"))
+    {
         System.Console.WriteLine("You stink of filth.");
     }
 
     if (place == "start")
     {
         Console.WriteLine("Your name is XF344 and you are currently in the docking station of the allied forces ship, there is a door ahead of you leading to the wheelhouse.");
-        Console.WriteLine("You hear a robotic voice say: If you want to enter, state your ID out loud, Droid.");
+        Console.WriteLine("You hear a robotic voice say: If you want to enter, state your ID out loud, Robot.");
         Console.WriteLine("{Btw when you enter prompts later on you will want to enter them when the terminal says your current valuables.}");
         string go = Console.ReadLine();
         go = go.ToLower();
@@ -89,10 +91,10 @@ while (place != "exit" && isAlive)
     }
     if (fightHappened && place == "hallway")
     {
+        Console.WriteLine("You defeated the enemy. Go to the next are? Choices: Yes, No, Back");
         string choice2 = Console.ReadLine();
         choice2 = choice2.ToLower();
-        Console.WriteLine("You defeated the enemy. Go to the next are? Choices: Yes, No, Back");
-        Console.ReadLine();
+
         if (choice2 == "yes")
         {
             place = "vendingRoom";
@@ -115,25 +117,61 @@ while (place != "exit" && isAlive)
         Console.WriteLine("You are met with an ominous vending machine, do you want to buy something? Choices: Yes, Back, WIP");
         string choice3 = Console.ReadLine();
         choice3 = choice3.ToLower();
-        Console.ReadLine();
 
         if (choice3 == "Yes")
         {
             (inventory, Money) = Store(inventory, Money);
-            
+
         }
 
         else if (choice3 == "back")
         {
             place = "hallway";
         }
+
+        else if (choice3 == "continue")
+        {
+            place = "garbageDisposal";
+        }
     }
 
+    if (place == "garbageDisposal")
+    {
+        Console.WriteLine("The garbage disposal is a long narrow room with different trash chutes along it's walls.");
+        Console.WriteLine("Do you want to go down into one of the chutes? Choices: Enter, Ignore");
+        string choice4 = Console.ReadLine();
+        choice4 = choice4.ToLower();
+        
+        if (choice4 == "enter" && (inventory.Contains("trash"))) {
+            Console.WriteLine("'Trash detected' A robotic voice exclaims.");
+            Console.ReadLine();
+            Console.WriteLine("Suddenly four robotic arms shoot out of different sockets and grab all of your limbs, you get violently stuffed into the chute and die.");
+            Console.ReadLine();
+            place = "exit";
+        }
+
+        else if (choice4 == "enter" !& (inventory.Contains("trash"))) {
+            Console.WriteLine("No trash detected.");
+            place = "garbageDisposal";
+        }
+
+        else if (choice4 == "ignore") {
+            Console.WriteLine("You ignore the trash chutes and continue walking.");
+            Console.ReadLine();
+            place = "finalRoom";
+        }
+
+        else {
+        place = "garbageDisposal";
+        }
+
+
+    }
 
 
     if (place == "escapepod")
     {
-        // if (inventory.Contains("key"))
+        // if (inventory.Contains("key")) *ignorera*
 
         Console.WriteLine("You are in the escape room, there is a spare pod left over from the crew leaving.");
         Console.WriteLine("Say 'Exit' to leave.(exit or back)");
@@ -249,12 +287,15 @@ static bool Fight()
 
 // använd kanske en affär för att få in en algoritm/array och för att få med typkonvertering. //jobbas på//
 
-// hallway ska leda till en Merchant eller vending machine, ta användning av den nya Money variabeln som du la till, kolla på dokumentation. //jobbas på//
+// hallway ska leda till en Merchant eller vending machine, ta användning av den nya Money variabeln som du la till, kolla på dokumentation. //klarat//
 
 // om en av fighters kommer till precis 0 health så fastnar spelet
 
-// fixa som sagt en lista av affärs grejor och sälj dem, kanske ge spelaren 100 money efter varje fight?
+// fixa som sagt en lista av affärs grejor och sälj dem, kanske ge spelaren 100 money efter varje fight?//klart på annat sätt än stipulerat//
 
-// lägg till ett item i store som kallas filth eller trash, gör så att det sägs varje gång man trycker på enter som med hur mycket perngar du har just nu, och få spelet att säga "you stink of flith/trash". Detta kan leda till ett hemligt ending.
+// lägg till ett item i store som kallas filth eller trash, gör så att det sägs varje gång man trycker på enter som med hur mycket pengar du har just nu, och få spelet att säga "you stink of flith/trash". Detta kan leda till ett hemligt ending.
 // Gör så att filth/trash kostar 1000 så att man blir tvungen att utnyttja en funktion för att ha råd.
 
+// fråga gärna micke om hur man gör så att spelaren får val att välja mellan, och hur man gör så att spelet kommer ihåg att du faktiskt köpt någonting, och på så sätt förlorar pengar.
+
+//fortsätt försöka fråga Micke hur du ska göra med affären. Du förstår inte hur den fungerar. Jobba med finalRoom och garageDisposal stageana. 
