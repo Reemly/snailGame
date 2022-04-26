@@ -7,7 +7,7 @@ string place = "start";
 int Money = 0; // Den här kommer ihåg hur mycket pengar som spelaren har samlat på sig det här livet.
 bool isAlive = true;
 bool fightHappened = false;
-bool playerPurchased = false;
+//bool playerPurchased = false;
 
 List<string> inventory = new List<string>();
 
@@ -26,6 +26,7 @@ while (place != "exit" && isAlive)
         Console.WriteLine("Your name is XF344 and you are currently in the docking station of the allied forces ship, there is a door ahead of you leading to the wheelhouse.");
         Console.WriteLine("You hear a robotic voice say: If you want to enter, state your ID out loud, Robot.");
         Console.WriteLine("{Btw when you enter prompts later on you will want to enter them when the terminal says your current valuables.}");
+        Console.WriteLine("Go full screen for best experience.");
         string go = Console.ReadLine();
         go = go.ToLower();
 
@@ -91,7 +92,9 @@ while (place != "exit" && isAlive)
     }
     if (fightHappened && place == "hallway")
     {
+        if (isAlive == true){
         Console.WriteLine("You defeated the enemy. Go to the next are? Choices: Yes, No, Back");
+        }
         string choice2 = Console.ReadLine();
         choice2 = choice2.ToLower();
 
@@ -114,7 +117,7 @@ while (place != "exit" && isAlive)
     }
     if (place == "vendingRoom")
     {
-        Console.WriteLine("You are met with an ominous vending machine, do you want to buy something? Choices: Yes, Back, WIP");
+        Console.WriteLine("You are met with an ominous vending machine, do you want to buy something? Choices: Yes, Back, Continue");
         string choice3 = Console.ReadLine();
         choice3 = choice3.ToLower();
 
@@ -150,7 +153,7 @@ while (place != "exit" && isAlive)
             place = "exit";
         }
 
-        else if (choice4 == "enter" !& (inventory.Contains("trash"))) {
+        else if (choice4 == "enter" !& (inventory.Contains("trash"))) { //funkar inte, !&.
             Console.WriteLine("No trash detected.");
             place = "garbageDisposal";
         }
@@ -168,10 +171,16 @@ while (place != "exit" && isAlive)
 
     }
 
+if (place == "finalRoom") {
+
+}
+
+
+
+
 
     if (place == "escapepod")
     {
-        // if (inventory.Contains("key")) *ignorera*
 
         Console.WriteLine("You are in the escape room, there is a spare pod left over from the crew leaving.");
         Console.WriteLine("Say 'Exit' to leave.(exit or back)");
@@ -254,6 +263,7 @@ static bool Fight()
             System.Console.WriteLine(art2);
 
             Console.ReadLine();
+            
 
 
             return false;
@@ -299,3 +309,4 @@ static bool Fight()
 // fråga gärna micke om hur man gör så att spelaren får val att välja mellan, och hur man gör så att spelet kommer ihåg att du faktiskt köpt någonting, och på så sätt förlorar pengar.
 
 //fortsätt försöka fråga Micke hur du ska göra med affären. Du förstår inte hur den fungerar. Jobba med finalRoom och garageDisposal stageana. 
+
