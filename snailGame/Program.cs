@@ -121,7 +121,7 @@ while (place != "exit" && isAlive)
         string choice3 = Console.ReadLine();
         choice3 = choice3.ToLower();
 
-        if (choice3 == "Yes")
+        if (choice3 == "yes")
         {
             (inventory, Money) = Store(inventory, Money);
 
@@ -141,7 +141,7 @@ while (place != "exit" && isAlive)
     if (place == "garbageDisposal")
     {
         Console.WriteLine("The garbage disposal is a long narrow room with different trash chutes along it's walls.");
-        Console.WriteLine("Do you want to go down into one of the chutes? Choices: Enter, Ignore");
+        Console.WriteLine("Do you want to go down into one of the chutes? Choices: Enter, Ignore, Back");
         string choice4 = Console.ReadLine();
         choice4 = choice4.ToLower();
         
@@ -154,6 +154,7 @@ while (place != "exit" && isAlive)
         }
 
         else if (choice4 == "enter" !& (inventory.Contains("trash"))) { //funkar inte, !&.
+
             Console.WriteLine("No trash detected.");
             place = "garbageDisposal";
         }
@@ -164,6 +165,10 @@ while (place != "exit" && isAlive)
             place = "finalRoom";
         }
 
+        else if (choice4 == "back"){
+            place = "vendingRoom";
+        }
+
         else {
         place = "garbageDisposal";
         }
@@ -172,6 +177,20 @@ while (place != "exit" && isAlive)
     }
 
 if (place == "finalRoom") {
+Console.WriteLine("nuh uh");
+Console.WriteLine("This isn't finished, type 'back'.");
+string choice5 = Console.ReadLine();
+choice5 = choice5.ToLower();
+
+if (choice5 == "back"){
+    place = "garbageDisposal";
+}
+
+else if (choice5 != "back") {
+    Console.WriteLine("Like i said this isnt finished yet, type 'back' to go back to the last room.");
+    Console.ReadLine();
+    
+}
 
 }
 
@@ -246,7 +265,7 @@ static bool Fight()
         int damage = generator.Next(1, 20);
         fighter1Health -= damage;
 
-        damage = generator.Next(1, 20);
+        damage = generator.Next(1, 200);
         fighter2Health -= damage;
 
         System.Console.WriteLine($"Fighter 1 health {fighter1Health}");
@@ -303,10 +322,11 @@ static bool Fight()
 
 // fixa som sagt en lista av affärs grejor och sälj dem, kanske ge spelaren 100 money efter varje fight?//klart på annat sätt än stipulerat//
 
-// lägg till ett item i store som kallas filth eller trash, gör så att det sägs varje gång man trycker på enter som med hur mycket pengar du har just nu, och få spelet att säga "you stink of flith/trash". Detta kan leda till ett hemligt ending.
+// lägg till ett item i store som kallas filth eller trash, gör så att det sägs varje gång man trycker på enter som med hur mycket pengar du har just nu, och få spelet att säga "you stink of flith/trash". Detta kan leda till ett hemligt ending. //klarat//
 // Gör så att filth/trash kostar 1000 så att man blir tvungen att utnyttja en funktion för att ha råd.
 
-// fråga gärna micke om hur man gör så att spelaren får val att välja mellan, och hur man gör så att spelet kommer ihåg att du faktiskt köpt någonting, och på så sätt förlorar pengar.
+// fråga gärna micke om hur man gör så att spelaren får val att välja mellan, och hur man gör så att spelet kommer ihåg att du faktiskt köpt någonting, och på så sätt förlorar pengar.//klarat//
 
-//fortsätt försöka fråga Micke hur du ska göra med affären. Du förstår inte hur den fungerar. Jobba med finalRoom och garageDisposal stageana. 
+//fortsätt försöka fråga Micke hur du ska göra med affären. Du förstår inte hur den fungerar. Jobba med finalRoom och garageDisposal stageana. //klarat//
 
+// 
